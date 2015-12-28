@@ -1,0 +1,14 @@
+yeaactivity:
+  build: ./
+  ports:
+    - "127.0.0.1:3908:3908"
+  volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /etc/timezone:/etc/timezone:ro
+    - ../:/usr/src/app
+  command: grunt fis:deploy
+  environment:
+    VIRTUAL_HOST: h5.yeamoney.cn
+  external_links:
+    - common_redis_1:redisDb
+    - common_mongo_1:mongoDb

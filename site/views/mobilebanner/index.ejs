@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>椰子理财</title>
+	<link rel="stylesheet" type="text/css" href="http://192.168.6.79:3908/static/common/main_409b782.css">
+	<link rel="stylesheet" type="text/css" href="http://192.168.6.79:3908/static/mobilebanner/banner_4956a69.css">
+    <script src="http://192.168.6.79:3908/static/common/jquery.min_b0dc11d.js"></script>
+    <script src="http://192.168.6.79:3908/static/common/jquery.mobile-1.4.5.min_39ee6f2.js"></script>
+</head>
+<body >
+	<div class="sky">
+	 <div class="nut"><img src="http://192.168.6.79:3908/static/mobilebanner/image/nut_ea73888.png" alt=""></div>
+		<div class="sea">
+			<div id="sea1"></div>
+			<div id="sea2"></div>
+		</div>
+		 <div class="beach"><img src="http://192.168.6.79:3908/static/mobilebanner/image/beach_2c946ec.png"></div>
+		<div class="logo"><img src="http://192.168.6.79:3908/static/mobilebanner/image/logo_6e8e1f5.png" alt=""></div>
+		<div class="title">
+			<img src="http://192.168.6.79:3908/static/mobilebanner/image/title2_da0adc1.png" alt="">
+		</div>
+	<div class="rulebox"><img src="http://192.168.6.79:3908/static/mobilebanner/image/rule2_83fa318.png" alt="" class="rule"></div>
+	</div>
+</body>
+<script type="text/javascript">
+	/*var bIsAndroid = navigator.userAgent.toLowerCase().match(/android/i) == "android";
+	if(bIsAndroid)
+	{
+		alert("android");
+	}*/
+	var dev_height=document.documentElement.clientHeight;
+    var dev_width=document.documentElement.clientWidth;
+	$('body').height(dev_height);
+	$('body,html').css('overflow-y','hidden');
+	$('.sky').height(dev_height);
+	$('.beach').height(dev_height*0.6);
+	$('.sea').width(dev_width);
+	$('.sea').css('bottom',dev_height*0.05);
+	$('.nut').css('bottom',dev_height*0.13);
+	$('.rule').css('bottom',-dev_height*0.4);
+	$('.rule').click(function(){
+		$(this).addClass('uprule').addClass('rulesup');
+	});
+	setTimeout(function(){$('.rule').addClass('uprule').addClass('rulesup');},4000);
+	if(dev_height<560)
+	{
+		$('.sea').css('bottom',0);
+		$('.nut').css('bottom',dev_height*0.1);
+		$('.rule').css('bottom',-dev_height*0.48);
+	}
+</script>
+</html>

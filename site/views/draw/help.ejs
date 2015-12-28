@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" >
+    <title>来帮你的朋友拼郎朗独奏会票！</title>
+    <link rel="stylesheet" href="http://192.168.6.79:3908/static/common/main_409b782.css">
+    <link rel="stylesheet" type="text/css" href="http://192.168.6.79:3908/static/draw/index_bd7f1c6.css">
+</head>
+<body>
+    <section class="pickup">
+        <div class="puser"><img class="userpic" src="<%- locals.help_user_info.headimgurl %>"><img class="depintu" src="http://192.168.6.79:3908/static/draw/image/depintu_f62368c.png" ></div>
+        <div class="sixpz">
+            <div class="pz">
+                <img src="http://192.168.6.79:3908/static/draw/image/p1font_f090fed.png" alt="" class="bigpic font">
+                <% if(locals.maps[0]==0) {%>
+                <img src="http://192.168.6.79:3908/static/draw/image/p1back_0db9c56.png" alt="" class="bigpic back">
+                <% } %>
+              </div>
+            <div class="pz">
+                <img src="http://192.168.6.79:3908/static/draw/image/p2fontyes_579ae3b.png" alt="" class="bigpic font">
+                <% if(locals.maps[1]==0) {%>
+                <img src="http://192.168.6.79:3908/static/draw/image/p2backyes_1bc4f62.png" alt="" class="bigpic back">
+                <% } %>
+            </div>
+            <div class="pz">
+                <img src="http://192.168.6.79:3908/static/draw/image/p3font_74cfe09.png" alt="" class="bigpic font">
+                <% if(locals.maps[2]==0) {%>
+                <img src="http://192.168.6.79:3908/static/draw/image/p3back_b63e912.png" alt="" class="bigpic back">
+                <% } %>
+            </div>
+            <div class="pz">
+                <img src="http://192.168.6.79:3908/static/draw/image/p4font_62a0318.png" alt="" class="bigpic font">
+                <% if(locals.maps[3]==0) {%>
+                <img src="http://192.168.6.79:3908/static/draw/image/p4back_8cfd13f.png" alt="" class="bigpic back">
+                <% } %>
+            </div>
+            <div class="pz">
+                <img src="http://192.168.6.79:3908/static/draw/image/p5font_8971146.png" alt="" class="bigpic font">
+                <% if(locals.maps[4]==0) {%>
+                <img src="http://192.168.6.79:3908/static/draw/image/p5back_46bbc7d.png" alt="" class="bigpic back">
+                <% } %>
+            </div>
+            <div class="pz">
+                <img src="http://192.168.6.79:3908/static/draw/image/p6font_750306d.png" alt="" class="bigpic font">
+                <% if(locals.maps[5]==0) {%>
+                <img src="http://192.168.6.79:3908/static/draw/image/p6back_37145fe.png" alt="" class="bigpic back">
+                <% } %>
+            </div>
+        <div class="clear"></div>
+
+        <div class="fshelpbtn">
+            <img src="http://192.168.6.79:3908/static/draw/image/myticket_814c9fb.png" alt="" class="btn" id="myticketbtn">
+        </div>
+    </section>
+     <div id="addmsg">
+        <div>(详细规则下拉至底部可见)</div>
+    </div>
+    <div id="bg2">
+      <section class="messagescroll">
+        <header class='mesheader'><img class='fans' src='http://192.168.6.79:3908/static/draw/image/fans_285376b.png'><img class='count' src='http://192.168.6.79:3908/static/draw/image/count_4b4a454.png' ><span class="countnum">0</span></header>
+        <div id="appendmsg">
+        </div>
+    </section>
+    <section class="commentary">
+          <div id="bottomfont">
+            <div>长按图片，识别二维码</div>
+            <div>或搜索公众号： <input id="publicid" type="text" value="yeaohyea" />(可复制)</div>
+            <div>每周都有高哔～格品质礼物哦</div>
+        </div>
+        <div id="qrcode"> <img src="http://192.168.6.79:3908/static/draw/image/qrcode_d066c88.png" alt=""></div>
+    </section>
+    <section id="space">
+
+    </section>
+    </div>
+
+<% if(locals.help_do&&!locals.win) {%>
+    <section id="fspick" class="babg">
+        <img src="http://192.168.6.79:3908/static/draw/image/fs-pick_c569c6d.png" id = "fspickbig"  alt="">
+    </section>
+  <% } %>
+
+     <% if(!locals.help_do&&!locals.win) {%>
+    <section id="nochance" class="babg">
+        <img src="http://192.168.6.79:3908/static/draw/image/helpnochance_4c25a9a.png"  alt="">
+    </section>
+    <% } %>
+    <section id="fswin" class="babg">
+        <img src="http://192.168.6.79:3908/static/draw/image/fs-win_172b120.png"  alt="">
+    </section>
+</body>
+    <script src="http://192.168.6.79:3908/static/common/jquery.min_b0dc11d.js"></script>
+    <script>
+        var maps = '<%- locals.maps %>';
+        var win = '<%- locals.win %>';
+        var num =3;
+        var openid = '<%- locals.help_user_info.openid %>';
+        if(win==1){
+            $('#fswin').show();
+            $('.text').append('locals.win 页面 , ='+win+'</br>');
+        }
+        $('#fswin').click(function(){
+            $(this).hide();
+        });
+        $('#fspick').click(function(){
+           $.ajax({
+            type:'get',
+            url:"/draw/help_do",
+            success:function(data){
+                if(data.win == 1){
+                    $('#fswin').show();
+                }
+            $('.pz').eq(data.map).find('.bigpic').delay(1000).addClass('sharking');
+            $('.pz').eq(data.map).find('.back').delay(2000).hide(0);
+            newest(num,openid);
+            newmap(openid);
+            }
+        });
+           $(this).hide();
+        });
+        $('#fshelpbtn').click(function(){
+            $('#sharefs').show();
+        });
+        $('#sharefs').click(function(){
+            $(this).hide();
+        });
+        $('#myticketbtn').click(function(){
+            window.location.href='/draw';
+        });
+        $('#nochance').click(function(){
+            $(this).hide();
+        });
+
+         function newmap(openid){
+            $.ajax({
+                url:'/draw/getUserMaps',
+                type:'get',
+                data:{ 'openid':openid },
+                async : false,
+                success:function(data){
+                    for (var i = 0; i < data.length; i++) {
+                        if(data[i] == 1){
+                            $('.pz').eq(i).find('.back').hide(0);
+                        }
+                    }
+                }
+            });
+        }
+
+        function newest(num,openid){
+            var msghtml = " ";
+            var param = { "num": 3, "openid": openid };
+            $.ajax({
+                url:'/draw/getFriendsDraw',
+                type:'get',
+                data:param,
+                async : false,
+                success:function(data){
+                    var fsdata=data.data;
+                    if(data.code == 200){
+                        fsdata.forEach(function(v,i){
+                msghtml += '<div class="mesblock"><img class="fspic" src="'+ v.f_user_info.headimgurl+'"><span class="fsid">'+v.f_user_info.nickname+'</span><span class="fstime">'+v.datetime +'</span><span class="fsmsg">抽中 '+parseInt(v.map+1)+'号拼图，还有什么不满足</span></div>';
+                            if(i<2){
+                                msghtml += '<div class="geline"> </div>';
+
+                            }
+             });$("#appendmsg").html(msghtml);}
+                    else{
+                    }
+                    if(data.total){
+                            $(".countnum").html(data.total);
+                        }
+                }
+            });
+        }
+        setInterval(function(){
+            newest(num,openid);
+        },2000);
+        setInterval(function(){
+            newmap(openid);
+        },2000);
+    </script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        wx.config(<%- JSON.stringify(locals.w_js) %>);
+        var g_link = '<%- locals.share_url %>';
+    </script>
+    <script src="http://192.168.6.79:3908/static/draw/share_a953f87.js"></script>
+    <script src="http://192.168.6.79:3908/static/draw/index_c29210c.js"></script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
