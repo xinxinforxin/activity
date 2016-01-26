@@ -1,0 +1,87 @@
+html,body{width:100%;height: 100%;margin: 0; border:1px solid black;}
+body{
+    background-image: url(image/indexBG4.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#firstPage{
+
+}
+#firstPage>div{
+    width:90px;
+}
+#firstPage>div img{
+    width:50%;
+    margin-left: 25%;
+}
+#firstPage>div>.imgfont{
+    width:90%;
+    margin-left: 5%;
+}
+#firstPage>div>div{
+    width:100%;
+    text-align: center;
+    background-image: url(image/memoBG.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color:#faba7b;
+    font-size: 0.8em;
+    padding: 2px;
+}
+.opened{
+    display: none;
+}
+#rulesClock{
+    z-index: 2;
+    position: absolute;
+    bottom: 6%;
+    left:-3%;
+    width:40%;
+}
+#land{
+    margin-top: 40%;
+    margin-left: 18%;
+}
+#light{
+    margin-top: -10%;
+    margin-left: 56%;
+}
+#tree{
+    margin-top: -10%;
+    margin-left: 24%;
+}
+#sun{
+    margin-top: -10%;
+    margin-left: 50%;
+}
+#animal{
+    margin-top: -10%;
+    margin-left: 22%;
+}
+#birth{
+    margin-top: -10%;
+    margin-left: 52%;
+}
+#people{
+    margin-left: 60%;
+}
+#ruleSection{
+    display: none;
+    z-index: 99;
+    position: absolute;
+    width:80%;
+    top:5em;
+    left:10%;
+    background-image: url(image/rulesBg.png);
+    background-size: 100% 100%;
+    height: 80%;
+}
+#ruleClose{
+    position: absolute;
+    right:-0.7em;
+    top:-0.7em;
+    width:2.5em;
+}
+
+
+/*day1*/

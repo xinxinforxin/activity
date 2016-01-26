@@ -1,0 +1,59 @@
+/*iphone 5*/
+@media only screen and (max-width: 330px) and (min-height: 520px){
+#land{
+    margin-left: 14%;
+}
+#light{
+    margin-top: -16%;
+}
+#birth{
+    margin-top: -18%;
+}
+}
+/*iphone4*/
+@media only screen and (max-width: 330px) and (max-height: 519px){
+#firstPage>div>.imgfont{
+    margin-top: -1em;
+}
+#firstPage>div>div{
+    margin-top: -0.6em;
+}
+#land{
+    margin-left: 14%;
+    margin-top: 35%;
+}
+#light{
+    margin-top: -20%;
+}
+#tree{
+    margin-top: -8%;
+}
+#animal{
+    margin-top: -12%;
+}
+#birth{
+    margin-top: -14%;
+    margin-left: 48%;
+}
+#people{
+    margin-top:-3%;
+}
+}
+/*iphone6 plus*/
+@media only screen and (min-width: 390px) and (max-width: 500px) and (min-height: 700px){
+#land{
+    margin-top: 45%;
+}
+#light{
+    margin-top: -12%;
+}
+#tree{
+    margin-top: -8%;
+}
+#sun{
+    margin-top: -4%;
+}
+#animal{
+    margin-top: -4%;
+}
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--inline[../../../common/page/head.ejs]-->
+    <title>创世纪</title>
+    <link rel="stylesheet" type="text/css" href="../../static/genisis/style.css?_inline">
+    <link rel="stylesheet" type="text/css" href="../../static/genisis/media.css?_inline">
+</head>
+<body>
+</head>
+<body style="overflow:hidden" scroll="no" id="firstPage">
+    <div id="land">
+        <img src="../../static/genisis/image/closeBox.png" alt="" class="closed">
+        <img src="../../static/genisis/image/openBox.png" alt="" class="opened">
+        <img src="../../static/genisis/image/font1.png"  class="imgfont" alt="">
+        <div class="nums">105人参与</div>
+    </div>
+    <div id="light">
+        <img src="../../static/genisis/image/closeBox.png" alt="" class="closed">
+        <img src="../../static/genisis/image/openBox.png" alt="" class="opened">
+        <img src="../../static/genisis/image/font2.png"  class="imgfont" alt="">
+        <div class="nums">105人参与</div>
+    </div>
+    <div id="tree">
+        <img src="../../static/genisis/image/closeBox.png" alt="" class="closed">
+        <img src="../../static/genisis/image/openBox.png" alt="" class="opened">
+        <img src="../../static/genisis/image/font3.png"  class="imgfont" alt="">
+        <div class="nums">105人参与</div>
+    </div>
+    <div id="sun">
+        <img src="../../static/genisis/image/closeBox.png" alt="" class="closed">
+        <img src="../../static/genisis/image/openBox.png" alt="" class="opened">
+        <img src="../../static/genisis/image/font4.png"  class="imgfont" alt="">
+        <div class="nums">105人参与</div>
+    </div>
+    <div id="animal">
+        <img src="../../static/genisis/image/closeBox.png" alt="" class="closed">
+        <img src="../../static/genisis/image/openBox.png" alt="" class="opened">
+        <img src="../../static/genisis/image/font5.png"  class="imgfont" alt="">
+        <div class="nums">105人参与</div>
+    </div>
+    <div id="birth">
+        <img src="../../static/genisis/image/closeBox.png" alt="" class="closed">
+        <img src="../../static/genisis/image/openBox.png" alt="" class="opened">
+        <img src="../../static/genisis/image/font6.png"  class="imgfont" alt="">
+        <div class="nums">105人参与</div>
+    </div>
+    <div id="people">
+        <img src="../../static/genisis/image/closeBox.png" alt="" class="closed">
+        <img src="../../static/genisis/image/openBox.png" alt="" class="opened">
+        <img src="../../static/genisis/image/font7.png"  class="imgfont" alt="">
+        <div class="nums">105人参与</div>
+    </div>
+ 
+        <img src="../../static/genisis/image/rulesClock2.png" alt="" id="rulesClock">
+    <section id="ruleSection">
+        <img src="../../static/genisis/image/closeBtn.png"alt="" id="ruleClose">
+    </section>
+    <!--inline[../../../common/page/foot.ejs]-->
+    <script>
+        $('#rulesClock').tap(function(){
+            $('#ruleSection').show();
+        });
+        $('#ruleSection').tap(function(){
+            $(this).hide();
+        });
+       /* alert($(window).width()+"+"+$(window).height());*/
+    </script>
+</body>
+</html>
