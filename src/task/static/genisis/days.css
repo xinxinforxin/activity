@@ -1,75 +1,360 @@
-html,body{width:100%;height: 100%;margin: 0; border:1px solid black;}
-.day1{
+html,body{margin: 0; height: 100%;width: 100%;}
+a{display: block;}
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 3em;
+}
+footer a{
+    display: inline-block;
+/*    -webkit-box-shadow: 0 0 2em #ccc;
+    text-align: center;
+    border-radius: 1.5em;*/
+    width:2.5em;
+    height: 2.5em;
+}
+footer span{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0.8em;
+    text-align: center;
+    letter-spacing:0.3em;
+    font-size: 1.3em;
+}
+.home{
+    background-image: url(image/homeBtn.png);
+    background-size: 100% 100%;
+    margin-left: 5%;
+}
+.yesterday{
+    background-image: url(image/yesterday.png);
+    background-size: 100% 100%;
+    margin-left: 8%;
+}
+
+.tomorrow{
+    background-image: url(image/tomorrow.png);
+    background-size: 100% 100%;
+    float: right;
+    margin-right: 8%;
+}
+.tasklist{
+    background-image: url(image/tasklistBox.png);
+    background-size: 100% 100%;
+    float: right;
+    margin-right: 5%;
+}
+.bgimg{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+}
+.day4-night{
+    opacity: 0;
+}
+.blackFont{
+    background-color: #fff;
+    color:#000;
+}
+.whiteFont{
+    background-color: #000;
+    color:#fff;
+
+}
+.aside{
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 15%;
+}
+.aside p{
+    width: 0%;
+    /*text-align: center;*/
+    height: 1.5em;
+    overflow: hidden;
+}
+.take{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+    display: none;
+    color:#000;
+    padding-top: 1em;
+    padding-bottom: 1.5em;
+}
+.takeBg{
+    background-image: url(image/rulesBg.png);
+    background-size: 100% 100%;
+}
+.take .redfont{
+    margin-left: 2.5em;
+    color:#d61d2b;
+}
+.take h4{text-align: center;}
+.take p{
+    margin-left: 2.5em;
+    width: 80%;
+}
+.taskBox{
+    width: 2em;
+    height: 1.5em;
+}
+.take .btn{
+    background-image: url(image/taskBtn.png);
+    background-size: 100% 100%;
+    width:36%;
+    height: 2.8em;
+    margin-left: 30%;
+    color: #222;
+    margin-top: 1em;
+    padding-top: 0.8em;
+    font-size: 1em;
+    line-height: 1em;
+    z-index: 99999;
+}
+.day2{
     background-image: url(image/day1.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
-.day2{
+.day3{
     background-image: url(image/day2.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
-.day3{
+.day4{
     background-image: url(image/day3.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
-.day4{
+.day5{
     background-image: url(image/day4.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
-.day5{
+.day6{
     background-image: url(image/day5.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
-.day6{
+.day7{
     background-image: url(image/day6.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
-.day7{
-    background-image: url(image/day7.jpg);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
+.over{width: 100%;height: 100%;overflow: hidden; position: absolute; top: 0;left:0;}
 .cloud{
+    display: none;
     position: absolute;
-    background-image: url(image/flog.png);
+    background-image: url(image/cloud.png);
     background-size: 100% 100%;
-    width:200%;
     height: 12em;
-    top: 60%;
-    left:-200%;
-    -webkit-animation: cloudmove 8s infinite ease-in-out;
-    animation: cloudmove 8s infinite ease-in-out;
-    border: 1px solid red;
+    opacity: 0.4;
 }
-.cloudtop{
+
+.cloud1{
+    display: block;
+    width:100%;
+    top: 1%;
+    -webkit-animation: cloudmove 20s infinite ease-in;
+}
+.cloud2{
+    display: block;
+    width:70%;
+    top: 5%;
+    -webkit-animation: cloudmove2 30s infinite ease-out;
+}
+.fog{
     position: absolute;
-    background-image: url(image/flog.png);
+    background-image: url(image/fog.png);
     background-size: 100% 100%;
     width:200%;
+    top: 70%;
     height: 12em;
-    top: 65%;
-    left:-250%;
-    -webkit-animation: cloudmove 8s infinite ease-in-out;
-    animation: cloudmove 8s infinite ease-in-out;
-    border: 1px solid green;
+    display: none;
+}
+.fog1{
+    display: block;
+    -webkit-animation: fogmove 10s infinite ease-in-out;
+    animation: fogmove 15s infinite ease-in-out;
+}
+.fog2{
+    display: block;
+    bottom: 25%;
+    -webkit-animation: fogmove2 20s infinite ease-in-out;
+    animation: fogmove2 35s infinite ease-in-out;
+}
+.tree{
+    position: absolute;
+    background-image: url(image/yeatree.png);
+    background-size: 100% 100%;
+    bottom: 15%;
+    right:0;
+    opacity: 0;
+}
+.tree1{
+    -webkit-animation: growup1 5s ease-in-out;
+    -webkit-animation-fill-mode:forwards;
+}
+.tree2{
+    width:25%;
+    height:25%;
+    opacity: 1;
+}
+.tree3{
+    -webkit-animation: growup2 5s ease-in-out;
+    -webkit-animation-fill-mode:forwards;
+}
+.day-night{
+    -webkit-animation: dayandnight 15s infinite ease-in-out;
+}
+.star{
+    position: absolute;
+    background-image: url(image/stars.png);
+    background-size: 100% 100%;
+    z-index: 9999;
+    opacity: 0;
+    width:3em;
+    height: 3em;
+}
+.star1{
+    top: 3%;
+    left:40%;
+}
+.star2{
+    top: 5%;
+    left:60%;
+}
+.starsprink{
+    -webkit-animation: sprink1 15s infinite ease-in-out;
+}
+.star2sprink{
+    -webkit-animation: sprink2 15s infinite ease-in-out;
+}
+@-webkit-keyframes cloudmove {
+    0% {
+        left:-70%;
+    }
+    20%{
+        left:-80%;
+    }
+    100% {
+        left:100%;
+
+    }
+}
+@-webkit-keyframes cloudmove2 {
+    0%,10% {
+        left:-55%;
+    }
+    50% {
+        left:20%;
+    }
+    100% {
+        left:100%;
+    }
+}
+@-webkit-keyframes fogmove {
+    0% {
+        opacity: 0.6;
+        left:-150%;
+    }
+    100% {
+        opacity: 0.8;
+        left:100%;
+    }
+}
+@-webkit-keyframes fogmove2 {
+    0%,10% {
+        opacity: 0.8;
+        left:-75%;
+    }
+    50% {
+        opacity: 1;
+        left:-30%;
+    }
+    100% {
+        opacity: 0.8;
+        left:100%;
+    }
+}
+@-webkit-keyframes growup1 {
+    0%,50%{
+        opacity: 1;
+    }
+    80% {
+        width:20%;
+        height:20%;
+        opacity: 1;
+    }
+    100% {
+        width:25%;
+        height:25%;
+        opacity: 1;
+    }
+}
+@-webkit-keyframes growup2 {
+    0%,50%{
+    }
+    80% {
+        width:25%;
+        height:25%;
+    }
+    100% {
+        width:30%;
+        height:30%;
+    }
+}
+@-webkit-keyframes dayandnight {
+    0%,40%{
+    }
+    50% {
+        opacity: 1;
+    }
+    70%{
+        opacity: 0;
+    }
+    80%,100% {
+    }
+}
+@-webkit-keyframes sprink1 {
+    0%,40%{
+    }
+    50% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0;
+    }
+    60%{
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+    70%{
+        opacity: 0;
+    }
+    80%,100% {
+    }
+}
+@-webkit-keyframes sprink2 {
+    0%,40%{
+    }
+    50% {
+        opacity: 1;
+    }
+    70%{
+        opacity: 0;
+    }
+    80%,100% {
+    }
 }
 /*@-webkit-keyframes cloudmove {
-    0%,10% {
-        opacity: 0.6;
-        -webkit-transform: translate(40em,0);
-    }
-
-    100% {
-        opacity: 1;
-        -webkit-transform: translate(80em,0);
-    }
-}*/
-/*@-webkit-keyframes cloudmovet {
     0%,30% {
         opacity: 0.2;
         -webkit-transform: translate(50em,0);
@@ -78,9 +363,9 @@ html,body{width:100%;height: 100%;margin: 0; border:1px solid black;}
     100% {
         opacity: 0.2;
         -webkit-transform: translate(30em,0);
-   */ }
 }
-/*@keyframes cloudmove {
+}
+@keyframes cloudmove {
     0%,30% {
         opacity: 0.2;
         transform: translate(0,10px);

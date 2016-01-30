@@ -7,11 +7,64 @@
     <link rel="stylesheet" type="text/css" href="../../static/genisis/days.css?_inline">
 
 </head>
-<body style="overflow:hidden" scroll="no" class="day5">
-
+<body style="overflow:hidden" scroll="no" class="day5 blackFont">
+    <img src="../../static/genisis/image/day5.jpg?__inline" alt="" class="bgimg">
+    <div class="aside">
+        <p>在你到达前的一个纪元，</p>
+        <p>椰子大陆一片空虚与混沌···</p>
+        <p>没有光明，没有生命，也没有苍穹··</p>
+        <p>直到2016年伊始，造物主你的降临···</p>
+    </div>
+    <div class="take not">
+        <p class="title">降临大陆任务</p>
+        <p>任务要求：根据系统提示，完成绑定银行卡操作。</p>
+        <p>任务奖励：成为椰子大陆的造物主 体验金1000元。</p>
+        <a href="#">去完成任务</a>
+    </div>
+    <div class="take yes">
+        <p class="title">降临大陆任务</p>
+        <p>绑定银行卡任务您已完成本任务</p>
+        <p>完成获得奖励：成为椰子大陆的造物主体验金1000元</p>
+        <a href="#">继续前行</a>
+    </div>
+    <div class="take aleady">
+        <p>绑定银行卡任务您已完成本任务</p>
+        <p>完成获得奖励：成为椰子大陆的造物主体验金1000元</p>
+    </div>
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="tree tree4"></div>
+    <div class="star1"></div>
+    <div class="star2"></div>
+    <footer>
+        <a class="yesterday" href="/t3">上一天</a>
+        <a class="home" href="/t">首页</a>
+        <a class="tomorrow" href="/t5">下一天</a>
+    </footer>
     <!--inline[../../../common/page/foot.ejs]-->
     <script>
-
+    $(function(){
+        var state = 1;
+        if(state == 0){
+            $('.aside > p').animate({width: '100%'}, 3000);
+            $('.not').show(10000);
+        }
+        else if(state == 1){
+            $('.yes').show(10000);
+            showup();
+        }
+        else {
+            $('.aleady').show(10000);
+            showup();
+        }
+        function showup(){
+            $('.day4-day').animate({opacity: '1'}, 3000);
+            $('.tree').addClass('tree3');
+            $('.day4-night').addClass('day-night');
+            $('.star1').addClass('starsprink');
+            $('.star2').addClass('star2sprink');
+        }
+    });
     </script>
 </body>
 </html>

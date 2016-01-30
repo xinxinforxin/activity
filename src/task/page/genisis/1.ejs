@@ -2,18 +2,83 @@
 <html>
 <head>
     <!--inline[../../../common/page/head.ejs]-->
-    <title>点亮椰子大陆
+    <title>第二天
     </title>
     <link rel="stylesheet" type="text/css" href="../../static/genisis/days.css?_inline">
 
 </head>
-<body style="overflow:hidden" scroll="no" class="day2">
-    <div class="cloud cloudtop"></div>
-    <div class="cloud"></div>
-    <div class="flog"></div>
+<body style="overflow:hidden" scroll="no" class="day2 whiteFont">
+     <img src="../../static/genisis/image/day2.jpg?__inline" alt="" class="bgimg">
+    <div class="over">
+        <div class="cloud"></div>
+        <div class="cloud"></div>
+        <div class="fog"></div>
+        <div class="fog"></div>
+    </div>
+    <div class="aside">
+        <p>在你到达前的一个纪元，</p>
+        <p>椰子大陆一片空虚与混沌···</p>
+        <p>没有光明，没有生命，也没有苍穹··</p>
+        <p>直到2016年伊始，造物主你的降临···</p>
+    </div>
+    <div class="take not">
+     <div class="taskConent">
+            <h4>降临大陆任务</h4>
+            <span class="redfont">任务要求</span>
+            <p>根据系统提示，完成绑定银行卡操作。</p>
+            <span class="redfont">任务奖励</span>
+            <p><img src="../../static/genisis/image/closeBox.png" alt="" class="taskBox">成为椰子大陆的造物主 体验金1000元。</p>
+        </div> 
+        <a href="#" class="btn">去完成任务</a>
+    </div>
+    <div class="take yes takeBg">
+        <h4>降临大陆任务</h4>
+        <p>绑定银行卡任务您已完成本任务</p>
+        <p>完成获得奖励：成为椰子大陆的造物主体验金1000元</p>
+        <a href="#" class="btn">继续前行</a>
+    </div>
+    <div class="take aleady takeBg">
+        <p>绑定银行卡任务您已完成本任务</p>
+        <p>完成获得奖励：成为椰子大陆的造物主体验金1000元</p>
+    </div>
+
+    <footer>
+        <a class="home"></a>
+        <a class="yesterday"></a>
+        <span>第二天</span>
+        <a class="tasklist"></a>
+        <a class="tomorrow"></a>
+    </footer>
     <!--inline[../../../common/page/foot.ejs]-->
     <script>
-
+    $(function(){
+        
+        var state = 1;
+        if(state == 0){
+            $('.aside > p').animate({width: '100%'}, 3000);
+            $('.not').show(1000);
+            $('.taskConent').hide();
+        }
+        else if(state == 1){
+            $('.yes').show(1000);
+            showup();
+        }
+        else {
+            $('.aleady').show(1000);
+            showup();
+        }
+        $('.btn').click(function(){
+            $('.not').addClass('takeBg');
+            $('.taskConent').show(1000);
+        });
+        function showup(){
+            $('.fog').eq(0).addClass('fog1');
+            $('.fog').eq(0).addClass('fog2');
+            $('.cloud').eq(0).addClass('cloud1');
+            $('.cloud').eq(1).addClass('cloud2');
+            $('.bgimg').animate({opacity: '1'}, 1500);
+        }
+    });
     </script>
 </body>
 </html>
